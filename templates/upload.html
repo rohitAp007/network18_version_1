@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Trustworthiness UI</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f4f4f4; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;">
+
+  <div style="background-color: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); width: 500px; text-align: center;">
+    <h1>Video Trustworthiness Analysis</h1>
+
+    <!-- Video Upload Section -->
+    <div style="margin-bottom: 20px;">
+      <label for="videoInput" style="font-weight: bold;">Upload Video:</label><br>
+      <input type="file" id="videoInput" accept="video/*" style="width: 100%; padding: 8px; margin-top: 10px;">
+    </div>
+
+    <!-- Creator Information -->
+    <div style="margin-bottom: 20px;">
+      <h2 style="margin-bottom: 10px;">Creator Information</h2>
+      <label for="creatorId" style="font-weight: bold;">Creator ID:</label><br>
+      <input type="text" id="creatorId" placeholder="Enter Creator ID" style="width: 100%; padding: 8px; margin-bottom: 10px;"><br>
+      
+      <label for="creatorName" style="font-weight: bold;">Creator Name:</label><br>
+      <input type="text" id="creatorName" placeholder="Enter Creator Name" style="width: 100%; padding: 8px; margin-bottom: 10px;"><br>
+      
+      <label for="originalSource" style="font-weight: bold;">Original Source:</label><br>
+      <input type="text" id="originalSource" placeholder="Enter Original Source" style="width: 100%; padding: 8px; margin-bottom: 10px;">
+    </div>
+
+    <!-- Action Buttons -->
+    <div style="margin-bottom: 20px;">
+      <button id="verifyCreatorBtn" style="padding: 10px 20px; background-color: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer; margin-right: 10px;">Verify Creator</button>
+      <button id="embedMetadataBtn" style="padding: 10px 20px; background-color: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer; margin-right: 10px;">Embed Metadata</button>
+      <button id="runTamperingBtn" style="padding: 10px 20px; background-color: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer;">Run Tampering Detection</button>
+    </div>
+
+    <!-- Result Display -->
+    <div style="text-align: left;">
+      <h2>Results</h2>
+      <div id="creatorVerificationStatus" style="padding: 10px; background-color: #f8f9fa; border-radius: 5px; margin-bottom: 10px;"></div>
+      <div id="tamperingResults" style="padding: 10px; background-color: #f8f9fa; border-radius: 5px; margin-bottom: 10px;"></div>
+      <div id="attributionMetadata" style="padding: 10px; background-color: #f8f9fa; border-radius: 5px; margin-bottom: 10px;"></div>
+    </div>
+  </div>
+
+  <!-- Link the JavaScript file -->
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+
+</body>
+</html>
